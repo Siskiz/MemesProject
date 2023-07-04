@@ -3,11 +3,13 @@ package com.example.memes.controller;
 import com.example.memes.entity.User;
 import com.example.memes.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/api")
 public class RESTController {
 
@@ -15,9 +17,10 @@ public class RESTController {
     private UserService userService;
 
     @GetMapping("/users")
-    public List<User> showAllUsers() {
+    public String showAllUsers(Model model) {
         List<User> allUsers = userService.getAllUsers();
-        return allUsers;
+        model.addAttribute("users", allUsers);
+        return "view-users";
     }
 
     @GetMapping("/users/{id}")
