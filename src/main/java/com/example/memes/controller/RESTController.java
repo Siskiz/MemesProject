@@ -16,6 +16,10 @@ public class RESTController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("")
+    public String showMainPage() {
+        return "main-page";
+    }
     @GetMapping("/users")
     public String showAllUsers(Model model) {
         List<User> allUsers = userService.getAllUsers();
@@ -24,7 +28,6 @@ public class RESTController {
     }
 
     @GetMapping("/users/{id}")
-    //@PathVariable берет информацию из строки поиска
     public User getUser(@PathVariable int id) {
         User user = userService.getUser(id);
         return user;
