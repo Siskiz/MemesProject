@@ -24,13 +24,14 @@ public class RESTController {
     public String showAllUsers(Model model) {
         List<User> allUsers = userService.getAllUsers();
         model.addAttribute("users", allUsers);
-        return "view-users";
+        return "view-all-users";
     }
 
     @GetMapping("/users/{id}")
-    public User getUser(@PathVariable int id) {
+    public String getUser(@PathVariable int id, Model model) {
         User user = userService.getUser(id);
-        return user;
+        model.addAttribute("user", user);
+        return "view-user";
     }
 
     @PostMapping("/users")

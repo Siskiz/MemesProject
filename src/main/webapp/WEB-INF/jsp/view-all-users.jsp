@@ -3,7 +3,7 @@
 <c:set var="root" value="${pageContext.request.contextPath}" />
 <html>
     <head>
-        <title>View all Users</title>
+        <title>View all Bibizians</title>
         <link rel="stylesheet" href="${root}/WEB-INF/css/style.css"/>
     </head>
     <body>
