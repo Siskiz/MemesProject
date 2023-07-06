@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="root" value="${pageContext.request.contextPath}" />
+<c:set var="root" value="${pageContext.request.contextPath}"/>
 <html>
     <head>
         <title>Welcome!!!</title>
-        <link rel="stylesheet" href="${root}/WEB-INF/css/style.css"/>
+        <link href="<c:url value="/css/style.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
         <h1>Greetings dear Bibizians. You are at home</h1>

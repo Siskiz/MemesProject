@@ -4,6 +4,7 @@
 <html>
     <head>
         <title>View Bibizian</title>
+        <link href="<c:url value="/css/style.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
     <h1>Bibizian</h1>
