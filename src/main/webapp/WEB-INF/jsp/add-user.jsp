@@ -3,12 +3,11 @@
 <c:set var="root" value="${pageContext.request.contextPath}"/>
 <html>
     <head>
-        <title>Welcome!!!</title>
+        <title>Add Bibizian</title>
         <link href="<c:url value="/css/style.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>Greetings dear Bibizians. You are at home</h1>
-        <h3><a href="api/users">Look at all Bibizians</a></h3>
-        <h3><a href="api/addUser">Become a Bibizian</a></h3>
+        <h1>Tell me a little about yourself</h1>
+
     </body>
 </html>
