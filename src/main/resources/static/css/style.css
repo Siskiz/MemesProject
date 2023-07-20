@@ -1,10 +1,20 @@
 body {
     background-color: aqua;
 }
+table {
+
+}
 table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
+
 }
 th, td {
+    border: 1px solid black;
     padding: 15px;
+    border-radius: 10px;
+}
+.headerText {
+    text-align: center;
+}
+.userAge {
+    text-align: center;
 }

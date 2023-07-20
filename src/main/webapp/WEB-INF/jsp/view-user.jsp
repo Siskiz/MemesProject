@@ -7,7 +7,7 @@
         <link href="<c:url value="/css/style.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-    <h1>Bibizian</h1>
+    <h1 class="headerText">Bibizian</h1>
         <table>
             <thead>
                 <tr>
@@ -22,7 +22,7 @@
                     <td>${user.name}</td>
                     <td>${user.surname}</td>
                     <td>${user.description}</td>
-                    <td>${user.age}</td>
+                    <td class="userAge">${user.age}</td>
                 </tr>
             </tbody>
         </table>
