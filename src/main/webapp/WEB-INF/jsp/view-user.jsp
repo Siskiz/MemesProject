@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="root" value="${pageContext.request.contextPath}"/>
 <html>
     <head>
@@ -26,5 +27,6 @@
                 </tr>
             </tbody>
         </table>
+        <h3><a href="users">All Bibizians</a></h3>
     </body>
 </html>
