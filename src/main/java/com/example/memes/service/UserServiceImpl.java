@@ -2,6 +2,7 @@ package com.example.memes.service;
 
 import com.example.memes.dao.UserRepository;
 import com.example.memes.entity.User;
+import com.example.memes.exception.ResavingUserException;
 import com.example.memes.exception.UserNotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,10 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User saveUser(User user) {
+        Optional<User> optional = userRepository.findById(user.getId());
+        if (optional.isPresent()) {
+            throw new ResavingUserException(user);
+        }
         return userRepository.save(user);
     }
 

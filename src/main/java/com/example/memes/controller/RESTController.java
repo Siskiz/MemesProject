@@ -23,6 +23,11 @@ public class RESTController {
         return "main-page";
     }
 
+    @GetMapping("/error")
+    public String showErrorPage() {
+        return "error-user";
+    }
+
     @GetMapping("/users")
     public String showAllUsers(Model model) {
         List<User> allUsers = userService.getAllUsers();
