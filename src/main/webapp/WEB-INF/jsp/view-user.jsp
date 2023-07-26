@@ -9,6 +9,9 @@
     </head>
     <body>
     <h1 class="headerText">Bibizian</h1>
+    <c:if test="${addUserSuccess}">
+        <div>Successfully added Bibizian with id: ${savedUser.getId()}</div>
+    </c:if>
         <table>
             <thead>
                 <tr>
@@ -27,6 +30,6 @@
                 </tr>
             </tbody>
         </table>
-        <h3><a href="users">All Bibizians</a></h3>
+        <h3><a href="/api/users">All Bibizians</a></h3>
     </body>
 </html>

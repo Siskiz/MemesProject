@@ -44,9 +44,12 @@ public class RESTController {
     }
 
     @PostMapping("/addUser")
-    public String addUser(@ModelAttribute("user") User user) {
+    public RedirectView addUser(@ModelAttribute("user") User user, RedirectAttributes redirectAttributes) {
         User savedUser = userService.saveUser(user);
-        return "view-user";
+        final RedirectView redirectView = new RedirectView("/api/users/" + savedUser.getId(), true);
+        redirectAttributes.addFlashAttribute("savedUser", savedUser);
+        redirectAttributes.addFlashAttribute("addUserSuccess", true);
+        return redirectView;
     }
 
     @PutMapping("/users")
