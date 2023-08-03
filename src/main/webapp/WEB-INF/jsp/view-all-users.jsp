@@ -16,15 +16,26 @@
                     <th>Surname</th>
                     <th>Description</th>
                     <th>Age</th>
+                    <th>Operation</th>
                 </tr>
             </thead>
             <tbody>
                 <c:forEach items="${users}" var="user">
+                    <c:url var="updateButton" value="/api/updateUser">
+                        <c:param name="userId" value="${user.id}"/>
+                    </c:url>
+                    <c:url var="deleteButton" value="/api/deleteUser">
+                        <c:param name="userId" value="${user.id}"/>
+                    </c:url>
                     <tr>
                         <td>${user.name}</td>
                         <td>${user.surname}</td>
                         <td>${user.description}</td>
                         <td class="userAge">${user.age}</td>
+                        <td>
+                            <input type="button" value="update" onclick="window.location.href='${updateButton}'"/>
+                            <input type="button" value="delete" onclick="window.location.href='${deleteButton}'"/>
+                        </td>
                     </tr>
                 </c:forEach>
             </tbody>

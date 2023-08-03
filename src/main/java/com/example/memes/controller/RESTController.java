@@ -57,9 +57,16 @@ public class RESTController {
         return redirectView;
     }
 
+    @GetMapping("/updateUser")
+    public String updateUser(@RequestParam("userId") int id, Model model) {
+        User updateUser = userService.getUser(id);
+        model.addAttribute("user", updateUser);
+        return "update-user";
+    }
     @PutMapping("/users")
-    public void updateUser(@RequestBody User user) {
+    public String updateUser(@RequestBody User user) {
         userService.updateUser(user);
+        return "";
     }
 
     @DeleteMapping("users/{id}")
