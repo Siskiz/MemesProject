@@ -12,6 +12,9 @@
     <c:if test="${addUserSuccess}">
         <div>Successfully added Bibizian with id: ${savedUser.getId()}</div>
     </c:if>
+    <c:if test="${updateUserSuccess}">
+        <div>Successfully updated Bibizian with id: ${updatedUser.getId()}</div>
+    </c:if>
         <table>
             <thead>
                 <tr>

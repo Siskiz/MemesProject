@@ -63,10 +63,13 @@ public class RESTController {
         model.addAttribute("user", updateUser);
         return "update-user";
     }
-    @PutMapping("/users")
-    public String updateUser(@RequestBody User user) {
-        userService.updateUser(user);
-        return "";
+    @PostMapping("/updateUser")
+    public RedirectView updateUser(@ModelAttribute("user") User user, RedirectAttributes redirectAttributes) {
+        User updatedUser = userService.updateUser(user);
+        final RedirectView redirectView = new RedirectView(("/api/users/" + updatedUser.getId()), true);
+        redirectAttributes.addFlashAttribute("updatedUser", updatedUser);
+        redirectAttributes.addFlashAttribute("updateUserSuccess", true);
+        return redirectView;
     }
 
     @DeleteMapping("users/{id}")

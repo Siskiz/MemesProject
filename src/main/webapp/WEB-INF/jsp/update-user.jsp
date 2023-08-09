@@ -8,6 +8,15 @@
         <link href="<c:url value="/css/style.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1 class="headerText">It's time to change something in yourself ${user.toString()}</h1>
+        <h1 class="headerText"> What do you want change in yourself</h1>
+        <c:url var="update_user_url" value="/api/updateUser"/>
+        <form:form action="${update_user_url}" method="post" modelAttribute="user">
+            <form:hidden path="id"/>
+            <form:label path="name">Name: </form:label><form:input type="text" path="name"/><br>
+            <form:label path="surname">Surname: </form:label><form:input type="text" path="surname"/><br>
+            <form:label path="description">Description: </form:label><form:input type="text" path="description"/><br>
+            <form:label path="age">Age: </form:label><form:input type="text" path="age"/><br>
+            <input type="submit" value="Become a new version yourself">
+        </form:form>
     </body>
 </html>
