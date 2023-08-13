@@ -8,31 +8,33 @@
         <link href="<c:url value="/css/style.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-    <h1 class="headerText">Bibizian</h1>
-    <c:if test="${addUserSuccess}">
-        <div>Successfully added Bibizian with id: ${savedUser.getId()}</div>
-    </c:if>
-    <c:if test="${updateUserSuccess}">
-        <div>Successfully updated Bibizian with id: ${updatedUser.getId()}</div>
-    </c:if>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Surname</th>
-                    <th>Description</th>
-                    <th>Age</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>${user.name}</td>
-                    <td>${user.surname}</td>
-                    <td>${user.description}</td>
-                    <td class="userAge">${user.age}</td>
-                </tr>
-            </tbody>
-        </table>
-        <h3><a href="/api/users">All Bibizians</a></h3>
+        <div class="container">
+            <h1>Bibizian</h1>
+            <c:if test="${addUserSuccess}">
+                <div>Successfully added Bibizian with id: ${savedUser.getId()}</div>
+            </c:if>
+            <c:if test="${updateUserSuccess}">
+                <div>Successfully updated Bibizian with id: ${updatedUser.getId()}</div>
+            </c:if>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Description</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>${user.name}</td>
+                            <td>${user.surname}</td>
+                            <td>${user.description}</td>
+                            <td>${user.age}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <h3><a href="/api/users">All Bibizians</a></h3>
+        </div>
     </body>
 </html>
