@@ -16,7 +16,6 @@
             <c:if test="${updateUserSuccess}">
                 <div>Successfully updated Bibizian with id: ${updatedUser.getId()}</div>
             </c:if>
-            <br>
                 <table>
                     <thead>
                         <tr>
