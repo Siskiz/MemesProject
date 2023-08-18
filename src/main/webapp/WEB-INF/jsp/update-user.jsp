@@ -13,18 +13,19 @@
             <c:url var="update_user_url" value="/api/updateUser"/>
             <form:form action="${update_user_url}" method="post" modelAttribute="user">
                 <form:hidden path="id"/>
+
                 <form:label path="name">Name: </form:label>
                 <form:input type="text" path="name"/>
-                <br>
+
                 <form:label path="surname">Surname: </form:label>
                 <form:input type="text" path="surname"/>
-                <br>
+
                 <form:label path="age">Age: </form:label>
                 <form:input type="number" path="age"/>
-                <br>
+
                 <form:label path="description">Description: </form:label>
                 <form:textarea type="text" path="description" rows="4" cols="50"/>
-                <br>
+
                 <input type="submit" value="Become a new version yourself">
             </form:form>
         </div>
