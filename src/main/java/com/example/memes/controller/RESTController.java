@@ -72,9 +72,10 @@ public class RESTController {
         return redirectView;
     }
 
-    @DeleteMapping("users/{id}")
-    public void deleteUser(@PathVariable int id) {
+    @GetMapping("/deleteUser")
+    public String deleteUser(@RequestParam("userId") int id) {
         userService.deleteUser(id);
+        return "redirect:/api/users";
     }
 
 }

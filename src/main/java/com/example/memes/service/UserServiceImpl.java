@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
     public User saveUser(User user) {
         Optional<User> optional = userRepository.findById(user.getId());
         if (optional.isPresent()) {
-            throw new ResavingUserException(user);
+            throw new ResavingUserException("User already exist by id = " + user.getId());
         }
         return userRepository.save(user);
     }
@@ -55,6 +55,11 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void deleteUser(int id) {
-        userRepository.deleteById(id);
+        Optional<User> optional = userRepository.findById(id);
+        if (optional.isPresent()) {
+            userRepository.deleteById(id);
+        } else {
+            throw new UserNotFound("User not found by id = " + id);
+        }
     }
 }
