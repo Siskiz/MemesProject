@@ -1,6 +1,5 @@
 package com.example.memes.exception;
 
-import com.example.memes.entity.User;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -8,10 +7,8 @@ import lombok.EqualsAndHashCode;
 @Data
 public class ResavingUserException extends RuntimeException {
 
-    private final User user;
-
-    public ResavingUserException(User user) {
-        this.user = user;
+    public ResavingUserException(String message) {
+        super(message);
     }
 
 }
